@@ -8,7 +8,8 @@ let colorOK = '#97CA00';
 
 
 const Icon = (req, res) => {
-  let name = getName(req);
+  
+  let name = `${req.params.group}/${req.params.project}`;
   console.log(name);
   if (name === '') {
     colorOK = '#97CA00';
@@ -24,18 +25,6 @@ const Icon = (req, res) => {
   res.end(scgTpl);
 };
 
-function getName(req) {
-  console.log('referer:'+req.headers.referer);
-  if (!req.headers.referer) {
-    console.log(req.headers);
-    return '';
-  }
-  let pieces = req.headers.referer.split('/');
-  if (pieces[2] !== 'github.com') {
-    return '';
-  }
-  return `${pieces[3]}/${pieces[4]}`;
-}
 
 module.exports = {
   Icon,
