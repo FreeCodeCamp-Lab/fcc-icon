@@ -9,6 +9,7 @@ let scgTpl = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3
 
 const Icon = (req, res) => {
   let name = getName(req);
+  console.log(name);
   if (name === '') {
     colorOK = '#97CA00';
     tag = '测试';
