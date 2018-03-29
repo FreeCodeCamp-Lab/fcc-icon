@@ -25,6 +25,7 @@ const Icon = (req, res) => {
 };
 
 function getName(req) {
+  console.log('referer:'+req.headers.referer);
   if (!req.headers.referer) {
     return '';
   }
