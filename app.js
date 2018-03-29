@@ -39,3 +39,6 @@ let port = process.env.PORT || 3000;
 app.listen(port, (e, r) => {
   console.log(`listen on :${port}`);
 });
+
+global.allow = process.env.ALLOW ? process.env.ALLOW.split(',') : [];
+console.log(global.allow);
