@@ -40,5 +40,5 @@ app.listen(port, (e, r) => {
   console.log(`listen on :${port}`);
 });
 
-global.allow = process.env.ALLOW ? process.env.ALLOW.split(',') : [];
+global.allow = require('./allow.json');
 console.log(global.allow);
